@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/Element/index.css"/>
+    <script src="css/Element/index.js"></script>
+</head>
+<body>
+    <!--声明式渲染-->
+    <div id="app">
+        {{message}}
+    </div>
+    <div id="app-2">
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息
+        </span>
+    </div>
+    <!--条件与循环-->
+    <div id="app-3">
+        这是一个判断条件,如果为true则显示,为flase则隐藏
+        <p v-if="seen" v-bind:title="info">现在你看到我了</p>
+    </div>
+    <div id="app-4">
+        <ol>
+            <h1>循环</h1>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
+
+    <!--处理用户输入-->
+    <div id="app-5">
+        <h1>处理用户输入</h1>
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+    </div>
+
+    <div id="app-6">
+        <h1>输入和应用状态之间的双向绑定</h1>
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+
+
+</body>
+
+<script src="js/test/index.js"></script>
+
+</html>
