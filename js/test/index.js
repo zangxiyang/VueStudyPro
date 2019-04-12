@@ -53,3 +53,16 @@ var app6 = new Vue({
         message:"你好VueJS"
     }
 })
+
+var vm = new Vue({
+    el:'#example',
+    data:{
+        message:'Hello'
+    },
+    computed: {
+        reversedMessage:function () {
+            //this指向vm实例
+            return this.message.split('').reverse().join('')
+        }
+    }
+})
